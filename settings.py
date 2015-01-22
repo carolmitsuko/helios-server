@@ -181,7 +181,7 @@ VOTER_UPLOAD_REL_PATH = "voters/%Y/%m/%d"
 
 
 # Change your email settings
-DEFAULT_FROM_EMAIL = get_from_env('DEFAULT_FROM_EMAIL', 'shirlei@gmail.com')
+DEFAULT_FROM_EMAIL = get_from_env('DEFAULT_FROM_EMAIL', 'heliosufmg@gmail.com')
 DEFAULT_FROM_NAME = get_from_env('DEFAULT_FROM_NAME', _('IFSC E-Voting System'))
 SERVER_EMAIL = '%s <%s>' % (DEFAULT_FROM_NAME, DEFAULT_FROM_EMAIL)
 
@@ -226,7 +226,7 @@ HELIOS_VOTERS_EMAIL = True
 HELIOS_PRIVATE_DEFAULT = False
 
 # authentication systems enabled
-#AUTH_ENABLED_AUTH_SYSTEMS = ['password','facebook','twitter', 'google', 'yahoo']
+AUTH_ENABLED_AUTH_SYSTEMS = ['password','facebook','twitter', 'google', 'yahoo']
 AUTH_ENABLED_AUTH_SYSTEMS = get_from_env('AUTH_ENABLED_AUTH_SYSTEMS', 'ldap').split(",")
 AUTH_DEFAULT_AUTH_SYSTEM = get_from_env('AUTH_DEFAULT_AUTH_SYSTEM', None)
 
@@ -255,11 +255,16 @@ CAS_ELIGIBILITY_URL = get_from_env('CAS_ELIGIBILITY_URL', "")
 CAS_ELIGIBILITY_REALM = get_from_env('CAS_ELIGIBILITY_REALM', "")
 
 # email server
-EMAIL_HOST = get_from_env('EMAIL_HOST', 'localhost')
-EMAIL_PORT = int(get_from_env('EMAIL_PORT', "2525"))
-EMAIL_HOST_USER = get_from_env('EMAIL_HOST_USER', '')
-EMAIL_HOST_PASSWORD = get_from_env('EMAIL_HOST_PASSWORD', '')
-EMAIL_USE_TLS = (get_from_env('EMAIL_USE_TLS', '0') == '1')
+#EMAIL_HOST = get_from_env('EMAIL_HOST', 'localhost')
+#EMAIL_PORT = int(get_from_env('EMAIL_PORT', "2525"))
+#EMAIL_HOST_USER = get_from_env('EMAIL_HOST_USER', '')
+#EMAIL_HOST_PASSWORD = get_from_env('EMAIL_HOST_PASSWORD', '')
+#EMAIL_USE_TLS = (get_from_env('EMAIL_USE_TLS', '0') == '1')
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'heliosufmg@gmail.com'
+EMAIL_HOST_PASSWORD = 'HeliosUfmg243'
+EMAIL_PORT = 587
 
 # to use AWS Simple Email Service
 # in which case environment should contain
